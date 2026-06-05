@@ -1,0 +1,34 @@
+# Virtual environment / Python interpreter files
+/DLLs/
+/Doc/
+/Lib/
+/Scripts/
+/include/
+/etc/
+/share/
+/tcl/
+/Microsoft VS Code/
+/python.exe
+/python3.dll
+/python314.dll
+/pythonw.exe
+/vcruntime140.dll
+/vcruntime140_1.dll
+
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables (contains sensitive API keys)
+.env
+.env.local
+.env.*
+
+# IDE / Editor configurations
+.vscode/
+.idea/
+
+# Local generated databases (optional: comment out if you prefer to push it)
+vectorstore/
