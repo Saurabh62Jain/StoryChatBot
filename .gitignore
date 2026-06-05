@@ -31,4 +31,4 @@ __pycache__/
 .idea/
 
 # Local generated databases (optional: comment out if you prefer to push it)
-vectorstore/
+# vectorstore/
