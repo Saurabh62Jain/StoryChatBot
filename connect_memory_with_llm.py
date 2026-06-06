@@ -296,6 +296,16 @@ def render_assistant_response(content: str):
     header {visibility: hidden;}
     .stAppDeployButton {visibility: hidden;}
     .stDeployButton {visibility: hidden;}
+    
+
+    /* Hide Streamlit default menus and buttons */
+    #MainMenu { display: none !important; }
+    footer { display: none !important; }
+    header { display: none !important; }
+    header[data-testid='stHeader'] { display: none !important; }
+    .stAppDeployButton { display: none !important; }
+    .stDeployButton { display: none !important; }
+    div[data-testid='stAppDeployButton'] { display: none !important; }
     </style>
     </head>
     <body>
@@ -594,6 +604,16 @@ def main():
     header {visibility: hidden;}
     .stAppDeployButton {visibility: hidden;}
     .stDeployButton {visibility: hidden;}
+    
+
+    /* Hide Streamlit default menus and buttons */
+    #MainMenu { display: none !important; }
+    footer { display: none !important; }
+    header { display: none !important; }
+    header[data-testid='stHeader'] { display: none !important; }
+    .stAppDeployButton { display: none !important; }
+    .stDeployButton { display: none !important; }
+    div[data-testid='stAppDeployButton'] { display: none !important; }
     </style>
     """
     css_code = css_code.replace("BG_CSS_PLACEHOLDER", bg_css)
@@ -700,5 +720,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 
