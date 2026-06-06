@@ -288,6 +288,14 @@ def render_assistant_response(content: str):
     .note-link:hover {{
         color: #93c5fd;
     }}
+    
+
+    /* Hide Streamlit default menus and buttons */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stAppDeployButton {visibility: hidden;}
+    .stDeployButton {visibility: hidden;}
     </style>
     </head>
     <body>
@@ -578,6 +586,14 @@ def main():
         font-size: 0.92rem !important;
         line-height: 1.5 !important;
     }
+    
+
+    /* Hide Streamlit default menus and buttons */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stAppDeployButton {visibility: hidden;}
+    .stDeployButton {visibility: hidden;}
     </style>
     """
     css_code = css_code.replace("BG_CSS_PLACEHOLDER", bg_css)
@@ -586,7 +602,25 @@ def main():
     st.title("📖 Saurabh Jain's StoryBot")
     st.subheader("Your AI Guide through the Stories and Creative Works of Author Saurabh Jain")
 
-    token_to_use = HF_TOKEN
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("Hugging Face API Token")
+    if not HF_TOKEN:
+        token_to_use = st.sidebar.text_input(
+            "Enter HF Token:",
+            type="password",
+            placeholder="hf_...",
+            help="Get a free token from https://huggingface.co/settings/tokens"
+        )
+    else:
+        token_to_use = HF_TOKEN
+        override_token = st.sidebar.text_input(
+            "Override HF Token (Optional):",
+            type="password",
+            placeholder="Leave blank to use default",
+            help="Override the system environment token if desired."
+        )
+        if override_token.strip():
+            token_to_use = override_token.strip()
 
     st.sidebar.markdown("""
     ---
@@ -666,3 +700,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
