@@ -286,27 +286,9 @@ def render_assistant_response(content: str):
         font-weight: 600;
     }}
     .note-link:hover {{
-        color: #93c5fd;
-    }}
-    
-
-    /* Hide Streamlit default menus and buttons */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .stAppDeployButton {visibility: hidden;}
-    .stDeployButton {visibility: hidden;}
-    
-
-    /* Hide Streamlit default menus and buttons */
-    #MainMenu { display: none !important; }
-    footer { display: none !important; }
-    header { display: none !important; }
-    header[data-testid='stHeader'] { display: none !important; }
-    .stAppDeployButton { display: none !important; }
-    .stDeployButton { display: none !important; }
-    div[data-testid='stAppDeployButton'] { display: none !important; }
-    </style>
+                color: #93c5fd;
+            }}
+            </style>
     </head>
     <body>
     <div class="container">
@@ -720,6 +702,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
